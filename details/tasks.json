@@ -1,0 +1,102 @@
+{
+  "migrated-descendant-api.html": {
+    "title": "Migrated Descendant API to CMA-entries-microservice",
+    "month": "July 2025",
+    "details": [
+      "Integrated workflow staging details into `cms-entries` repository.",
+      "Handled descendants across levels (even without depth).",
+      "Resolved 500 error with JSON RTE references.",
+      "Supported custom user access with limited permissions.",
+      "Fixed asset_parent_uid and parent_uid issues.",
+      "Added WEB_UI_API_KEY header support.",
+      "Built Descendants Log Dashboard for Non-Prod."
+    ],
+    "tags": [
+      "Monitoring",
+      "ACL",
+      "API"
+    ]
+  },
+  "bug-fixes-july.html": {
+    "title": "Bug Fixes - July",
+    "month": "July 2025",
+    "details": [
+      "Fixed variant deletion bug on UI.",
+      "Corrected asset_parent_uid and parent_uid logic.",
+      "Resolved API response differences for descendants.",
+      "Fixed custom field not saving on variants (on hold).",
+      "Updated error message typo in environment permission bug.",
+      "Work in progress: API support based on version."
+    ],
+    "tags": [
+      "Variants",
+      "API",
+      "ACL"
+    ]
+  },
+  "entry-asset-descendants.html": {
+    "title": "Entry and Asset Descendants",
+    "month": "May 2025",
+    "details": [
+      "Refactored logic and implemented tests.",
+      "Added ACL permissions and SDK support.",
+      "Debugged include_publish_details for multiple environments.",
+      "Integrated workflow details into API.",
+      "Planning production deployment."
+    ],
+    "tags": [
+      "ACL",
+      "API"
+    ]
+  },
+  "security-grpc-enhancements.html": {
+    "title": "Security & GRPC Enhancements",
+    "month": "May 2025",
+    "details": [
+      "Resolved 2 VAPT issues (Matt Black).",
+      "Fixed OAuth Variant Write permission typo.",
+      "Updated gRPC proto files and debugging.",
+      "Implemented database time tracking for performance.",
+      "gRPC support in publishing rules implemented."
+    ],
+    "tags": [
+      "Security",
+      "ACL",
+      "Variants",
+      "gRPC",
+      "Performance"
+    ]
+  },
+  "permission-enhancements.html": {
+    "title": "Permission Enhancements & Release Planning",
+    "month": "April 2025",
+    "details": [
+      "Implemented role-based access control on descendants.",
+      "Added sidecar support for permissions on Variants.",
+      "Fixed unauthorized update access (VAPT).",
+      "Handled workflow details in API response.",
+      "Release plan finalized with stakeholders.",
+      "Indexed Variant Group name in Superadmin DB."
+    ],
+    "tags": [
+      "Variants",
+      "ACL",
+      "API",
+      "Security"
+    ]
+  },
+  "learnings-side-projects.html": {
+    "title": "Learnings & Side Projects",
+    "month": "April 2025",
+    "details": [
+      "Completed 'Pair Programming with AI' course.",
+      "Started System Design course.",
+      "Spiked branch support in variant management.",
+      "Investigated multiple event triggers on delete.",
+      "Prepared detailed release plan sheet."
+    ],
+    "tags": [
+      "Variants"
+    ]
+  }
+}
