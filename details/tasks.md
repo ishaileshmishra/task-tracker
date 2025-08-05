@@ -1,4 +1,4 @@
-## Migrated Descendant API to CMA-entries-microservice (July 2025)
+# Migrated Descendant API to CMA-entries-microservice (July 2025)
 
 **Tags:** Monitoring, ACL, API
 
