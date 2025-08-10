@@ -33,30 +33,20 @@
       function downloadPDF() {
         window.print();
       }
-      window.onload = function () {
-        new Chart(document.getElementById("taskChart"), {
-          type: "bar",
-          data: {
-            labels: ["April", "May", "July"],
-            datasets: [
-              {
-                label: "Tasks Completed",
-                data: [2, 2, 2],
-                backgroundColor: ["#7c3aed", "#10b981", "#3b82f6"],
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            plugins: { legend: { display: false } },
-          },
-        });
-      };
+    </script>
+    <script src="js/taskManager.js"></script>
+    <script src="chart.js"></script>
+    <script src="admin.js"></script>
+    <script>
+      // Initialize the dashboard when the page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        window.taskManager.initializeDashboard();
+      });
     </script>
   </head>
   <body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
     <header
-      class="bg-blue-800 dark:bg-blue-900 text-white p-6 text-center shadow"
+      class="bg-blue-800 dark:bg-blue-900 text-white p-6 text-center shadow relative"
     >
       <h1 class="text-3xl font-bold">Shailesh's Monthly Task Tracker</h1>
       <p class="text-sm mt-2">
@@ -76,7 +66,117 @@
           Download PDF
         </button>
       </div>
+      <button
+        onclick="showAdminLogin()"
+        class="absolute top-6 right-6 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded shadow"
+      >
+        Admin Panel
+      </button>
     </header>
+
+    <!-- Admin Login Modal -->
+    <div
+      id="adminLoginModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center"
+    >
+      <div
+        class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-md w-full"
+      >
+        <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
+          Admin Login
+        </h2>
+        <input
+          type="password"
+          id="adminPassword"
+          placeholder="Enter admin password"
+          class="w-full p-2 mb-4 border rounded dark:bg-gray-700 dark:text-white"
+        />
+        <div class="flex justify-end space-x-2">
+          <button
+            onclick="closeAdminLogin()"
+            class="px-4 py-2 bg-gray-300 dark:bg-gray-600 rounded"
+          >
+            Cancel
+          </button>
+          <button
+            onclick="validateAdmin()"
+            class="px-4 py-2 bg-blue-600 text-white rounded"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div
+      id="adminPanelModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center"
+    >
+      <div
+        class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-2xl w-full"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-white">
+            Add New Task
+          </h2>
+          <button
+            onclick="closeAdminPanel()"
+            class="text-gray-500 hover:text-gray-700 dark:text-gray-400"
+          >
+            ✕
+          </button>
+        </div>
+        <form id="taskForm" class="space-y-4">
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >Month</label
+            >
+            <select
+              id="taskMonth"
+              class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white"
+            >
+              <option value="april">April</option>
+              <option value="may">May</option>
+              <option value="july">July</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >Title</label
+            >
+            <input
+              type="text"
+              id="taskTitle"
+              class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white"
+              required
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >Description</label
+            >
+            <textarea
+              id="taskDescription"
+              class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <div class="flex justify-end">
+            <button
+              type="submit"
+              class="px-4 py-2 bg-blue-600 text-white rounded"
+            >
+              Add Task
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <section class="max-w-6xl mx-auto p-4">
       <input
@@ -122,123 +222,10 @@
       </div>
 
       <!-- Timeline Layout -->
-      <div class="relative border-l border-gray-300 dark:border-gray-600 ml-4">
-        <!-- Example Task (Make all tasks follow this pattern) -->
-        <!-- JULY -->
-        <div class="mb-10 ml-4 month-section" data-month="july">
-          <div
-            class="absolute w-4 h-4 bg-blue-600 rounded-full -left-2.5 top-2"
-          ></div>
-          <time class="text-sm text-gray-500 dark:text-gray-400"
-            >July 2025</time
-          >
-          <div class="mt-2 space-y-3">
-            <a
-              href="details/migrated-descendant-api.html"
-              class="block bg-white dark:bg-gray-800 p-4 rounded shadow task-card hover:bg-blue-100 dark:hover:bg-gray-700"
-            >
-              <h3 class="text-lg font-bold">
-                Migrated Descendant API to CMA-entries-microservice
-              </h3>
-              <p>
-                Integrated workflow staging, resolved bugs, added WEB_UI_API_KEY
-                support, and built Descendants Log Dashboard.
-              </p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">
-                Status: Completed
-              </p>
-            </a>
-            <a
-              href="details/bug-fixes-july.html"
-              class="block bg-white dark:bg-gray-800 p-4 rounded shadow task-card hover:bg-blue-100 dark:hover:bg-gray-700"
-            >
-              <h3 class="text-lg font-bold">Bug Fixes</h3>
-              <p>
-                Fixed Variant UI deletion issue, asset_parent_uid null bug, and
-                improved descendant API consistency.
-              </p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">
-                Status: Completed
-              </p>
-            </a>
-          </div>
-        </div>
-
-        <!-- MAY -->
-        <div class="mb-10 ml-4 month-section" data-month="may">
-          <div
-            class="absolute w-4 h-4 bg-green-600 rounded-full -left-2.5 top-2"
-          ></div>
-          <time class="text-sm text-gray-500 dark:text-gray-400">May 2025</time>
-          <div class="mt-2 space-y-3">
-            <a
-              href="details/entry-asset-descendants.html"
-              class="block bg-white dark:bg-gray-800 p-4 rounded shadow task-card hover:bg-green-100 dark:hover:bg-gray-700"
-            >
-              <h3 class="text-lg font-bold">Entry and Asset Descendants</h3>
-              <p>
-                Improved logic, added ACL tests, SDK support, and workflow
-                integration. Prepared for production deployment.
-              </p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">
-                Status: Completed
-              </p>
-            </a>
-            <a
-              href="details/security-grpc-enhancements.html"
-              class="block bg-white dark:bg-gray-800 p-4 rounded shadow task-card hover:bg-green-100 dark:hover:bg-gray-700"
-            >
-              <h3 class="text-lg font-bold">Security & GRPC Enhancements</h3>
-              <p>
-                Fixed VAPT issues, implemented time tracking, gRPC proto
-                updates, and performance logging.
-              </p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">
-                Status: Completed
-              </p>
-            </a>
-          </div>
-        </div>
-
-        <!-- APRIL -->
-        <div class="mb-10 ml-4 month-section" data-month="april">
-          <div
-            class="absolute w-4 h-4 bg-purple-600 rounded-full -left-2.5 top-2"
-          ></div>
-          <time class="text-sm text-gray-500 dark:text-gray-400"
-            >April 2025</time
-          >
-          <div class="mt-2 space-y-3">
-            <a
-              href="details/permission-enhancements.html"
-              class="block bg-white dark:bg-gray-800 p-4 rounded shadow task-card hover:bg-purple-100 dark:hover:bg-gray-700"
-            >
-              <h3 class="text-lg font-bold">
-                Permission Enhancements & Release Planning
-              </h3>
-              <p>
-                Implemented RBAC, fixed unauthorized access, tested descendants,
-                and coordinated with stakeholders for release planning.
-              </p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">
-                Status: Completed
-              </p>
-            </a>
-            <a
-              href="details/learnings-side-projects.html"
-              class="block bg-white dark:bg-gray-800 p-4 rounded shadow task-card hover:bg-purple-100 dark:hover:bg-gray-700"
-            >
-              <h3 class="text-lg font-bold">Learnings & Side Projects</h3>
-              <p>
-                Completed AI Pair Programming course, started System Design
-                course, added indexes and improved variant workflows.
-              </p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">
-                Status: Completed
-              </p>
-            </a>
-          </div>
-        </div>
+      <div
+        class="relative border-l border-gray-300 dark:border-gray-600 ml-4 timeline-container"
+      >
+        <!-- Tasks will be dynamically loaded here -->
       </div>
     </section>
 

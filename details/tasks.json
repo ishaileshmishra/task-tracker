@@ -11,11 +11,7 @@
       "Added WEB_UI_API_KEY header support.",
       "Built Descendants Log Dashboard for Non-Prod."
     ],
-    "tags": [
-      "Monitoring",
-      "ACL",
-      "API"
-    ]
+    "tags": ["Monitoring", "ACL", "API"]
   },
   "bug-fixes-july.html": {
     "title": "Bug Fixes - July",
@@ -28,11 +24,7 @@
       "Updated error message typo in environment permission bug.",
       "Work in progress: API support based on version."
     ],
-    "tags": [
-      "Variants",
-      "API",
-      "ACL"
-    ]
+    "tags": ["Variants", "API", "ACL"]
   },
   "entry-asset-descendants.html": {
     "title": "Entry and Asset Descendants",
@@ -44,10 +36,7 @@
       "Integrated workflow details into API.",
       "Planning production deployment."
     ],
-    "tags": [
-      "ACL",
-      "API"
-    ]
+    "tags": ["ACL", "API"]
   },
   "security-grpc-enhancements.html": {
     "title": "Security & GRPC Enhancements",
@@ -59,13 +48,7 @@
       "Implemented database time tracking for performance.",
       "gRPC support in publishing rules implemented."
     ],
-    "tags": [
-      "Security",
-      "ACL",
-      "Variants",
-      "gRPC",
-      "Performance"
-    ]
+    "tags": ["Security", "ACL", "Variants", "gRPC", "Performance"]
   },
   "permission-enhancements.html": {
     "title": "Permission Enhancements & Release Planning",
@@ -78,12 +61,7 @@
       "Release plan finalized with stakeholders.",
       "Indexed Variant Group name in Superadmin DB."
     ],
-    "tags": [
-      "Variants",
-      "ACL",
-      "API",
-      "Security"
-    ]
+    "tags": ["Variants", "ACL", "API", "Security"]
   },
   "learnings-side-projects.html": {
     "title": "Learnings & Side Projects",
@@ -95,8 +73,6 @@
       "Investigated multiple event triggers on delete.",
       "Prepared detailed release plan sheet."
     ],
-    "tags": [
-      "Variants"
-    ]
+    "tags": ["Variants"]
   }
 }

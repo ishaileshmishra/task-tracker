@@ -1,31 +1,81 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bug Fixes - July</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
-  <header class="bg-blue-800 dark:bg-blue-900 text-white p-6">
-    <div class="max-w-4xl mx-auto">
-      <a href='../index.html' class='text-sm hover:underline'>&larr; Back to Dashboard</a>
-      <h1 class="text-3xl font-bold mt-2">Bug Fixes - July</h1>
-      <p class="text-sm text-blue-200">July 2025</p>
-    </div>
-  </header>
-  <main class="max-w-4xl mx-auto px-6 py-8">
-    <div class='mb-6'><span class='inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded'>Variants</span> <span class='inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded'>API</span> <span class='inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded'>ACL</span></div><section class="space-y-6">
-      <div class='bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500'><p class='text-md'>Fixed variant deletion bug on UI.</p></div>
-<div class='bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500'><p class='text-md'>Corrected asset_parent_uid and parent_uid logic.</p></div>
-<div class='bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500'><p class='text-md'>Resolved API response differences for descendants.</p></div>
-<div class='bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500'><p class='text-md'>Fixed custom field not saving on variants (on hold).</p></div>
-<div class='bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500'><p class='text-md'>Updated error message typo in environment permission bug.</p></div>
-<div class='bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500'><p class='text-md'>Work in progress: API support based on version.</p></div>
-    </section>
-  </main>
-  <footer class="bg-blue-800 dark:bg-blue-900 text-white text-center p-4 mt-10">
-    <p>&copy; 2025 Shailesh Mishra. All rights reserved.</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bug Fixes - July</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <header class="bg-blue-800 dark:bg-blue-900 text-white p-6">
+      <div class="max-w-4xl mx-auto">
+        <a href="../index.html" class="text-sm hover:underline"
+          >&larr; Back to Dashboard</a
+        >
+        <h1 class="text-3xl font-bold mt-2">Bug Fixes - July</h1>
+        <p class="text-sm text-blue-200">July 2025</p>
+      </div>
+    </header>
+    <main class="max-w-4xl mx-auto px-6 py-8">
+      <div class="mb-6">
+        <span
+          class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+          >Variants</span
+        >
+        <span
+          class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+          >API</span
+        >
+        <span
+          class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+          >ACL</span
+        >
+      </div>
+      <section class="space-y-6">
+        <div
+          class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500"
+        >
+          <p class="text-md">Fixed variant deletion bug on UI.</p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500"
+        >
+          <p class="text-md">
+            Corrected asset_parent_uid and parent_uid logic.
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500"
+        >
+          <p class="text-md">
+            Resolved API response differences for descendants.
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500"
+        >
+          <p class="text-md">
+            Fixed custom field not saving on variants (on hold).
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500"
+        >
+          <p class="text-md">
+            Updated error message typo in environment permission bug.
+          </p>
+        </div>
+        <div
+          class="bg-white dark:bg-gray-800 shadow rounded p-4 mb-4 border-l-4 border-blue-500"
+        >
+          <p class="text-md">Work in progress: API support based on version.</p>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="bg-blue-800 dark:bg-blue-900 text-white text-center p-4 mt-10"
+    >
+      <p>&copy; 2025 Shailesh Mishra. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
